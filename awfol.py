@@ -105,7 +105,7 @@ class OrgHandler:
                     path, fname = os.path.split(uri)
                     mname, ext = os.path.splitext(fname)
 
-                    mod = imp.load_source(mname, uri)
+                    mod = importlib.machinery.SourceFileLoader(mname, uri).load_module()
 
                     acc_list = mod_tree.search_nodes(name=account)
                     if len(acc_list) == 0 :
@@ -139,7 +139,7 @@ class OrgHandler:
                 path, fname = os.path.split(uri)
                 mname, ext = os.path.splitext(fname)
 
-                rule = imp.load_source(mname, uri)
+                rule = importlib.machinery.SourceFileLoader(mname, uri).load_module()
                 rule.eval_rule(tree)
 
     def save_tree(self, tree):
