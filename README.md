@@ -4,7 +4,7 @@ The AWS full organization lister (awfol) gives you insights into your federated 
 
 The analysis happens in two steps
 
-* Gather all infos you need from the federated accounts. You do this with the help of the modules which reside under `mods`. You can use the existing modules or write your own. Every module uses a temporary AWS session. You need a working assume_role set up in your AWS organization to do get your temporary session.
+* Gather all infos you need from the federated accounts. You do this with the help of the modules which reside under `mods`. You can use the existing modules or write your own. Every module uses a temporary AWS session. You need a working assume_role set up in your AWS organization to get your temporary session.
 
 * Analyse the information from the modules via the rules residing in `rules`.
 
